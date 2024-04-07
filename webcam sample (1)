@@ -1,0 +1,22 @@
+cd ~/catkin_ws/src
+catkin_create_pkg cv_basics image_transport cv_bridge sensor_msgs rospy roscpp std_msgs
+Create the Image Publisher Node (Python)
+roscd cv_basics
+mkdir scripts
+cd scripts
+gedit img_pub.py
+chmod +x img_pub.py
+gedit img_sub.py - Create the Image Subscriber Node (Python)
+chmod +x img_sub.py
+Open a new terminal window, and type the following commands to build all the nodes in the package:
+cd ~/catkin_ws
+catkin_make 
+python3 img_pub.py
+python3 img_sub.py
+let’s create a launch file that launches both the publisher and subscriber nodes.
+Open a new terminal window, and go to your package.
+roscd cv_basics
+mkdir launch
+cd launch
+gedit cv_basics_py.launch
+roslaunch cv_basics cv_basics_py.launch
